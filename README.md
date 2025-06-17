@@ -78,6 +78,23 @@ O projeto está organizado da seguinte forma para garantir escalabilidade e manu
   /screens        # Componentes de tela completos
   /services       # Lógica de negócios e comunicação com AsyncStorage
   /types          # Definições de tipos do TypeScript
+```
+## Imagens do App
+
+* Tela Login
+  ![image](https://github.com/user-attachments/assets/2cbfe317-4436-42cc-b598-8397ec72ba98)
+
+* Tela Home
+  ![image](https://github.com/user-attachments/assets/061a51e6-13e0-4080-97a9-4eb3b980b820)
+
+* Tela Investimentos
+  ![image](https://github.com/user-attachments/assets/96573f3c-7db8-4482-86e3-e84f730352ef)
+
+* Tela Algoritmo
+  ![image](https://github.com/user-attachments/assets/842c4da2-a623-4188-94c3-c818c36382ea)
+
+
+
 
 
 
