@@ -40,7 +40,7 @@ Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desen
 
 1.  **Clone o repositório** (ou descompacte os arquivos do projeto em uma pasta):
     ```bash
-    # git clone [https://link-para-seu-repositorio.git](https://link-para-seu-repositorio.git)
+    # git clone https://github.com/Leonardo-Valerio/antiaposta-app
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
