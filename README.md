@@ -1,97 +1,83 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Aposta Consciente - Simulador Educativo de Apostas
 
-# Getting Started
+## 🎯 Sobre o Projeto
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+**Aposta Consciente** é um aplicativo mobile, desenvolvido em React Native, que funciona como uma ferramenta educativa para demonstrar os riscos financeiros associados a jogos de aposta online. Em vez de promover o vício, o aplicativo simula a experiência de uma casa de apostas para provar matematicamente ao usuário que, a longo prazo, as chances estão sempre contra ele.
 
-## Step 1: Start Metro
+O objetivo principal é conscientizar sobre o custo de oportunidade do dinheiro, mostrando como os valores que seriam perdidos em apostas poderiam ser aplicados em investimentos reais e gerar retorno.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Funcionalidades Principais
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+* **Autenticação de Usuário:** Sistema de cadastro e login com e-mail e senha, com os dados persistidos localmente no dispositivo usando `AsyncStorage`.
+* **Simulador de Apostas Dinâmico:**
+    * O usuário pode inserir o valor que deseja apostar em cada rodada.
+    * O algoritmo de probabilidade é ajustado dinamicamente:
+        * **Primeira Jogada:** 90% de chance de vitória para criar um "gancho" inicial.
+        * **Jogadas Seguintes:** A chance de vitória base é de 25%, mas diminui à medida que o valor da aposta aumenta em proporção ao saldo do usuário.
+* **Conscientização sobre Investimentos:** Ao tentar adicionar saldo fictício, o aplicativo exibe uma tela educativa que:
+    * Permite ao usuário escolher o valor a ser adicionado.
+    * Mostra uma estimativa de quanto aquele valor renderia em um ano se aplicado em investimentos reais, como Tesouro Direto e CDBs.
+* **Transparência do Algoritmo:** Uma tela dedicada explica em detalhes toda a lógica de probabilidade utilizada no simulador, desmistificando a "sorte" e expondo a vantagem matemática da "casa".
 
-```sh
-# Using npm
-npm start
+## 🛠️ Tecnologias Utilizadas
 
-# OR using Yarn
-yarn start
+* **React Native:** Framework para desenvolvimento de aplicativos móveis multiplataforma.
+* **TypeScript:** Superset do JavaScript que adiciona tipagem estática ao código.
+* **React Navigation:** Biblioteca para gerenciamento de rotas e navegação entre telas.
+* **AsyncStorage:** Armazenamento local no dispositivo para persistência dos dados do usuário.
+
+## 🚀 Como Executar o Projeto
+
+Siga os passos abaixo para configurar e rodar o projeto em seu ambiente de desenvolvimento.
+
+### Pré-requisitos
+
+* [Node.js](https://nodejs.org/en/) (versão LTS recomendada)
+* [Android Studio](https://developer.android.com/studio) para acesso ao emulador Android.
+* Ambiente de desenvolvimento React Native configurado. Siga o [guia oficial](https://reactnative.dev/docs/environment-setup) se necessário.
+
+### Instalação
+
+1.  **Clone o repositório** (ou descompacte os arquivos do projeto em uma pasta):
+    ```bash
+    # git clone [https://link-para-seu-repositorio.git](https://link-para-seu-repositorio.git)
+    ```
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd ApostaConsciente
+    ```
+3.  **Instale todas as dependências:**
+    ```bash
+    npm install
+    ```
+
+### Execução
+
+1.  **Inicie um emulador Android** através do Android Studio.
+2.  **Abra dois terminais** na pasta raiz do projeto.
+3.  No **primeiro terminal**, inicie o servidor Metro:
+    ```bash
+    npx react-native start
+    ```
+4.  No **segundo terminal**, compile e instale o aplicativo no emulador:
+    ```bash
+    npx react-native run-android
+    ```
+
+Pronto! O aplicativo será instalado e iniciado no seu emulador.
+
+## 📁 Estrutura de Pastas
+
+O projeto está organizado da seguinte forma para garantir escalabilidade e manutenção:
+
 ```
+/src
+  /components     # Componentes reutilizáveis (Button, Input, etc.)
+  /constants      # Constantes globais (cores, etc.)
+  /navigation     # Configuração da navegação e rotas
+  /screens        # Componentes de tela completos
+  /services       # Lógica de negócios e comunicação com AsyncStorage
+  /types          # Definições de tipos do TypeScript
 
-## Step 2: Build and run your app
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
